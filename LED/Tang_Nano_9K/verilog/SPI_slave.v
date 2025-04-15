@@ -25,7 +25,7 @@ module SPI_slave(
     assign o_data = w_done ? r_data : 8'b00000000;
     assign o_done = w_done;
 
-    always @(posedoge i_clk or posedoge i_rst) begin
+    always @(posedge i_clk or posedge i_rst) begin
         if (i_rst) begin
             r_sck <= 0;
             r_cs <= 4'b1111;
@@ -44,6 +44,9 @@ module SPI_slave(
                 if (w_sck) begin
                     r_data <= {r_data[6:0], i_mosi};
                 end
+            end
+            if (w_done) begin
+                r_data <= 0;
             end
         end
     end
