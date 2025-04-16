@@ -37,11 +37,11 @@ cmds = [
 ]
 
 while True:
-    num_on = sum(btn.value() == 0 for btn in btns)
-    btns_on = num_on >= 2
+    num_push = sum(btn.value() == 0 for btn in btns)
+    btns_push = num_push >= 2
 
     for i in range(6):
-        if btns[i].value() == 0 and btns_on == 0:
+        if btns[i].value() == 0 and btns_push == 0:
             cs(0)
             spi.write(bytearray([cmds[i]]))
             cs(1)
