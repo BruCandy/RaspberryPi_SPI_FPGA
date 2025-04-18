@@ -1,4 +1,4 @@
-# SPI_RaspberryPi
+# RaspberryPi_SPI_FPGA
 
 このプロジェクトは、 **Tang Nano 9K** をスレーブ、 **Raspberry Pi PICO2** をマスターとしてSPI通信のやり取りを行うものです。  
 今後もアップデートを予定しています。
